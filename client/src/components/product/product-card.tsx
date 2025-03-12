@@ -38,19 +38,19 @@ const ProductCard = ({ product }: ProductCardProps) => {
       </div>
 
       <div className="p-6">
-        <h3 className="font-['Playfair_Display'] text-xl mb-2 text-[#4A704A]">
+        <h3 className="font-['Playfair_Display'] text-xl mb-2 text-[#966F33]">
           {product.name}
         </h3>
         <p className="font-['Lora'] text-sm text-gray-600 mb-4 line-clamp-2">
           {product.description}
         </p>
         <div className="flex items-center justify-between">
-          <span className="text-lg font-semibold text-[#4A704A]">
+          <span className="text-lg font-semibold text-[#8B4513]">
             {product.price} ₽
           </span>
           <Button 
             onClick={handleAddToCart}
-            className="bg-[#4A704A] hover:bg-[#3A5A3A] text-white"
+            className="bg-[#966F33] hover:bg-[#8B4513] text-white"
           >
             В корзину
           </Button>
