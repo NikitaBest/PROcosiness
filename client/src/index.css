@@ -6,35 +6,35 @@
 
 @layer base {
   :root {
-    --background: 47 29% 91%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 34 44% 97%;
+    --foreground: 348 30% 25%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 348 30% 25%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 348 30% 25%;
 
-    --primary: 120 20% 36%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 348 30% 75%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 34 44% 87%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 34 44% 92%;
+    --secondary-foreground: 348 30% 25%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 34 44% 92%;
+    --muted-foreground: 348 15% 45%;
 
-    --accent: 348 18% 75%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 348 30% 85%;
+    --accent-foreground: 348 30% 25%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 348 30% 90%;
+    --input: 348 30% 90%;
+    --ring: 348 30% 75%;
 
-    --radius: 0.5rem;
+    --radius: 1.25rem;
   }
 }
 
@@ -54,9 +54,17 @@
 }
 
 .btn-primary {
-  @apply bg-[#4A704A] text-white hover:bg-[#3A5A3A] transition-colors;
+  @apply bg-[#D9A7B0] text-white hover:bg-[#C797A0] transition-all duration-300 shadow-md hover:shadow-lg;
 }
 
 .btn-secondary {
-  @apply bg-[#D9A7B0] text-white hover:bg-[#C797A0] transition-colors;
+  @apply bg-[#F5E8C7] text-[#D9A7B0] hover:bg-[#F0DFB9] transition-all duration-300 shadow-md hover:shadow-lg;
+}
+
+.card-hover {
+  @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-[#D9A7B0] to-[#C797A0];
 }

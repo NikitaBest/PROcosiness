@@ -9,20 +9,20 @@ const banners = [
   {
     title: "Создай уют с PRO|уют",
     description: "Ручная работа, экологичные материалы, любовь к деталям",
-    image: "https://placehold.co/1920x600/966F33/ffffff?text=Уютный+интерьер",
-    color: "bg-[#966F33]"
+    image: "https://placehold.co/1920x600/D9A7B0/ffffff?text=Уютный+интерьер",
+    color: "bg-[#D9A7B0]"
   },
   {
     title: "Подсвечники ручной работы",
     description: "Добавьте магии в ваш дом",
-    image: "https://placehold.co/1920x600/8B4513/ffffff?text=Подсвечники",
-    color: "bg-[#8B4513]"
+    image: "https://placehold.co/1920x600/C797A0/ffffff?text=Подсвечники",
+    color: "bg-[#C797A0]"
   },
   {
     title: "Декоративные фигурки",
     description: "Уникальные гипсовые изделия для вашего интерьера",
-    image: "https://placehold.co/1920x600/CD853F/ffffff?text=Декор",
-    color: "bg-[#CD853F]"
+    image: "https://placehold.co/1920x600/E8C4C9/ffffff?text=Декор",
+    color: "bg-[#E8C4C9]"
   }
 ];
 
@@ -63,7 +63,7 @@ export const BannerCarousel = () => {
                   <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: selectedIndex === index ? 1 : 0 }}
-                    className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent"
+                    className="absolute inset-0 bg-gradient-to-r from-white/50 to-transparent"
                   />
                   <img 
                     src={banner.image} 
@@ -79,18 +79,18 @@ export const BannerCarousel = () => {
                       y: selectedIndex === index ? 0 : 20
                     }}
                     transition={{ duration: 0.5, delay: 0.2 }}
-                    className="max-w-2xl text-white"
+                    className="max-w-2xl"
                   >
-                    <h2 className="font-['Playfair_Display'] text-4xl md:text-6xl mb-6">
+                    <h2 className="font-['Playfair_Display'] text-4xl md:text-6xl mb-6 text-white drop-shadow-lg">
                       {banner.title}
                     </h2>
-                    <p className="font-['Lora'] text-lg md:text-xl mb-8">
+                    <p className="font-['Lora'] text-lg md:text-xl mb-8 text-white/90 drop-shadow">
                       {banner.description}
                     </p>
                     <Link href="/catalog">
                       <Button 
                         size="lg"
-                        className="bg-white text-[#966F33] hover:bg-white/90 font-['Lora'] text-lg"
+                        className="bg-white/90 hover:bg-white text-[#D9A7B0] hover:text-[#C797A0] font-['Lora'] text-lg shadow-lg"
                       >
                         Смотреть каталог
                       </Button>
@@ -107,7 +107,7 @@ export const BannerCarousel = () => {
       <Button
         variant="ghost"
         size="icon"
-        className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white"
+        className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white rounded-full"
         onClick={scrollPrev}
       >
         <ChevronLeft className="h-6 w-6" />
@@ -115,7 +115,7 @@ export const BannerCarousel = () => {
       <Button
         variant="ghost"
         size="icon"
-        className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white"
+        className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white rounded-full"
         onClick={scrollNext}
       >
         <ChevronRight className="h-6 w-6" />
