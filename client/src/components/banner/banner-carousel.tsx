@@ -63,7 +63,7 @@ export const BannerCarousel = () => {
                   <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: selectedIndex === index ? 1 : 0 }}
-                    className="absolute inset-0 bg-gradient-to-r from-white/50 to-transparent"
+                    className="absolute inset-0 bg-gradient-to-r from-white/50 via-transparent to-transparent"
                   />
                   <img 
                     src={banner.image} 
@@ -107,7 +107,7 @@ export const BannerCarousel = () => {
       <Button
         variant="ghost"
         size="icon"
-        className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white rounded-full"
+        className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white rounded-full shadow-lg backdrop-blur-sm"
         onClick={scrollPrev}
       >
         <ChevronLeft className="h-6 w-6" />
@@ -115,7 +115,7 @@ export const BannerCarousel = () => {
       <Button
         variant="ghost"
         size="icon"
-        className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white rounded-full"
+        className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white rounded-full shadow-lg backdrop-blur-sm"
         onClick={scrollNext}
       >
         <ChevronRight className="h-6 w-6" />
