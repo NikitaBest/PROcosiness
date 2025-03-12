@@ -25,18 +25,18 @@ const CartSheet = () => {
         <Button variant="ghost" size="icon" className="relative">
           <ShoppingCart className="h-6 w-6" />
           {items.length > 0 && (
-            <span className="absolute -top-1 -right-1 bg-[#4A704A] text-white rounded-full w-5 h-5 text-xs flex items-center justify-center">
+            <span className="absolute -top-1 -right-1 bg-[#D9A7B0] text-white rounded-full w-5 h-5 text-xs flex items-center justify-center">
               {items.length}
             </span>
           )}
         </Button>
       </SheetTrigger>
-      
+
       <SheetContent>
         <SheetHeader>
           <SheetTitle>Корзина</SheetTitle>
         </SheetHeader>
-        
+
         <div className="mt-8">
           {items.length === 0 ? (
             <p className="text-center text-gray-500">Корзина пуста</p>
@@ -60,7 +60,7 @@ const CartSheet = () => {
                       </p>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-center space-x-2">
                     <input
                       type="number"
@@ -81,13 +81,15 @@ const CartSheet = () => {
                   </div>
                 </div>
               ))}
-              
+
               <div className="pt-4 border-t">
                 <div className="flex justify-between mb-4">
                   <span>Итого:</span>
                   <span className="font-semibold">{total} ₽</span>
                 </div>
-                <Button className="w-full">Оформить заказ</Button>
+                <Button className="w-full bg-[#D9A7B0] hover:bg-[#C797A0] text-white">
+                  Оформить заказ
+                </Button>
               </div>
             </div>
           )}
