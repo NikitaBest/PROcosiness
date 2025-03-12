@@ -26,7 +26,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
       animate={{ opacity: 1, y: 0 }}
       whileHover={{ y: -5 }}
       transition={{ duration: 0.3 }}
-      className="bg-white rounded-2xl shadow-lg overflow-hidden transform transition-all hover:shadow-xl"
+      className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden transform transition-all hover:shadow-xl"
     >
       <div className="aspect-square relative overflow-hidden group">
         <motion.img
@@ -34,14 +34,14 @@ const ProductCard = ({ product }: ProductCardProps) => {
           alt={product.name}
           className="object-cover w-full h-full transform transition-transform group-hover:scale-110"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       </div>
 
       <div className="p-6">
-        <h3 className="font-['Playfair_Display'] text-xl mb-2 text-[#D9A7B0]">
+        <h3 className="font-['Playfair_Display'] text-xl mb-2 text-[#D9A7B0] hover:text-[#C797A0] transition-colors">
           {product.name}
         </h3>
-        <p className="font-['Lora'] text-sm text-gray-600 mb-4 line-clamp-2">
+        <p className="font-['Lora'] text-sm text-gray-600 mb-4 line-clamp-2 leading-relaxed">
           {product.description}
         </p>
         <div className="flex items-center justify-between">
@@ -50,7 +50,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
           </span>
           <Button 
             onClick={handleAddToCart}
-            className="bg-[#D9A7B0] hover:bg-[#C797A0] text-white shadow-md hover:shadow-lg transition-all duration-300"
+            className="bg-[#D9A7B0] hover:bg-[#C797A0] text-white shadow-md hover:shadow-lg transition-all duration-300 rounded-full"
           >
             В корзину
           </Button>

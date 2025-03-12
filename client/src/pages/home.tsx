@@ -11,7 +11,7 @@ const Home = () => {
   });
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gradient-to-b from-[#FDF4F5] to-white">
       {/* Banner Carousel */}
       <BannerCarousel />
 
@@ -19,13 +19,13 @@ const Home = () => {
       <CategoryGrid />
 
       {/* Featured Products */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-16 md:py-24 bg-white/50 backdrop-blur-sm">
         <div className="container mx-auto px-4">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-['Playfair_Display'] text-3xl md:text-4xl mb-12 text-center text-[#966F33]"
+            className="font-['Playfair_Display'] text-3xl md:text-4xl mb-12 text-center text-[#C797A0]"
           >
             Популярные изделия
           </motion.h2>
@@ -35,7 +35,7 @@ const Home = () => {
               {[...Array(6)].map((_, i) => (
                 <div
                   key={i}
-                  className="h-[400px] bg-[#FDF6E3]/50 rounded-lg animate-pulse"
+                  className="h-[400px] bg-white/50 rounded-2xl animate-pulse shadow-lg"
                 />
               ))}
             </div>

@@ -35,17 +35,17 @@ export const ProductFilters = ({
         <div className="flex-1 relative">
           <Input
             placeholder="Поиск товаров..."
-            className="pl-10"
+            className="pl-10 bg-white/80 backdrop-blur-sm border-[#D9A7B0]/20 focus:border-[#D9A7B0] transition-colors rounded-full"
             onChange={(e) => onSearchChange(e.target.value)}
           />
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-[#D9A7B0]" />
         </div>
         <Button
           variant="outline"
           size="icon"
           onClick={() => setIsFiltersOpen(!isFiltersOpen)}
-          className={`transition-colors ${
-            isFiltersOpen ? "bg-[#D9A7B0] text-white" : ""
+          className={`transition-all duration-300 rounded-full border-[#D9A7B0]/20 ${
+            isFiltersOpen ? "bg-[#D9A7B0] text-white shadow-lg" : "hover:bg-[#D9A7B0]/10"
           }`}
         >
           <SlidersHorizontal className="h-5 w-5" />
@@ -62,7 +62,7 @@ export const ProductFilters = ({
         transition={{ duration: 0.3 }}
         className="overflow-hidden"
       >
-        <div className="bg-white rounded-2xl p-6 shadow-lg space-y-6">
+        <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-lg space-y-6">
           {/* Categories */}
           <div>
             <h3 className="font-['Playfair_Display'] text-lg mb-3 text-[#D9A7B0]">
@@ -75,10 +75,10 @@ export const ProductFilters = ({
                   variant={selectedCategory === category ? "default" : "outline"}
                   onClick={() => onCategoryChange(category)}
                   className={`
-                    rounded-full transition-all
+                    rounded-full transition-all duration-300
                     ${
                       selectedCategory === category
-                        ? "bg-[#D9A7B0] text-white shadow-md"
+                        ? "bg-[#D9A7B0] text-white shadow-md hover:bg-[#C797A0]"
                         : "border-[#D9A7B0] text-[#D9A7B0] hover:bg-[#D9A7B0]/10"
                     }
                   `}
@@ -102,7 +102,7 @@ export const ProductFilters = ({
               onValueChange={handlePriceChange}
               className="mt-2"
             />
-            <div className="flex justify-between mt-2 text-sm text-gray-600">
+            <div className="flex justify-between mt-2 text-sm text-gray-600 font-['Lora']">
               <span>{priceRange[0]} ₽</span>
               <span>{priceRange[1]} ₽</span>
             </div>
