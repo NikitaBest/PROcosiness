@@ -22,26 +22,38 @@ const ProductCard = ({ product }: ProductCardProps) => {
 
   return (
     <motion.div
-      whileHover={{ scale: 1.05 }}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      whileHover={{ y: -5 }}
       transition={{ duration: 0.3 }}
-      className="bg-white rounded-lg shadow-md overflow-hidden"
+      className="bg-white rounded-lg shadow-lg overflow-hidden transform transition-all hover:shadow-xl"
     >
-      <div className="aspect-square relative">
-        <img
+      <div className="aspect-square relative overflow-hidden group">
+        <motion.img
           src={product.imageUrl}
           alt={product.name}
-          className="object-cover w-full h-full"
+          className="object-cover w-full h-full transform transition-transform group-hover:scale-110"
         />
+        <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300" />
       </div>
-      
-      <div className="p-4">
-        <h3 className="font-['Playfair_Display'] text-lg mb-2">{product.name}</h3>
-        <p className="font-['Lora'] text-sm text-gray-600 mb-4">
+
+      <div className="p-6">
+        <h3 className="font-['Playfair_Display'] text-xl mb-2 text-[#4A704A]">
+          {product.name}
+        </h3>
+        <p className="font-['Lora'] text-sm text-gray-600 mb-4 line-clamp-2">
           {product.description}
         </p>
         <div className="flex items-center justify-between">
-          <span className="text-lg font-semibold">{product.price} ₽</span>
-          <Button onClick={handleAddToCart}>В корзину</Button>
+          <span className="text-lg font-semibold text-[#4A704A]">
+            {product.price} ₽
+          </span>
+          <Button 
+            onClick={handleAddToCart}
+            className="bg-[#4A704A] hover:bg-[#3A5A3A] text-white"
+          >
+            В корзину
+          </Button>
         </div>
       </div>
     </motion.div>

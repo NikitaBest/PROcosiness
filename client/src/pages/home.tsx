@@ -4,6 +4,7 @@ import { Link } from "wouter";
 import type { Product } from "@shared/schema";
 import ProductCard from "@/components/product/product-card";
 import { Button } from "@/components/ui/button";
+import { PlasterAnimation } from "@/components/animations/plaster-animation";
 
 const Home = () => {
   const { data: products, isLoading } = useQuery<Product[]>({
@@ -16,9 +17,11 @@ const Home = () => {
       <motion.section
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className="bg-[#F5E8C7] py-24 md:py-32"
+        className="relative bg-[#F5E8C7] py-24 md:py-32 overflow-hidden"
       >
-        <div className="container mx-auto px-4">
+        <PlasterAnimation />
+
+        <div className="container mx-auto px-4 relative">
           <div className="max-w-2xl">
             <motion.h1
               initial={{ y: 20, opacity: 0 }}
@@ -44,7 +47,7 @@ const Home = () => {
               <Link href="/catalog">
                 <Button 
                   size="lg" 
-                  className="bg-[#4A704A] hover:bg-[#3A5A3A] text-white font-['Lora'] text-lg"
+                  className="bg-[#4A704A] hover:bg-[#3A5A3A] text-white font-['Lora'] text-lg shadow-lg"
                 >
                   Перейти в каталог
                 </Button>
@@ -57,9 +60,14 @@ const Home = () => {
       {/* Featured Products */}
       <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="font-['Playfair_Display'] text-3xl md:text-4xl mb-12 text-center text-[#4A704A]">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="font-['Playfair_Display'] text-3xl md:text-4xl mb-12 text-center text-[#4A704A]"
+          >
             Популярные изделия
-          </h2>
+          </motion.h2>
 
           {isLoading ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -71,11 +79,16 @@ const Home = () => {
               ))}
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            >
               {products?.slice(0, 6).map((product) => (
                 <ProductCard key={product.id} product={product} />
               ))}
-            </div>
+            </motion.div>
           )}
         </div>
       </section>
