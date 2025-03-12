@@ -6,7 +6,7 @@
 
 @layer base {
   :root {
-    --background: 34 44% 97%;
+    --background: 348 44% 98%;
     --foreground: 348 30% 25%;
 
     --card: 0 0% 100%;
@@ -18,10 +18,10 @@
     --primary: 348 30% 75%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 34 44% 92%;
+    --secondary: 250 20% 92%;
     --secondary-foreground: 348 30% 25%;
 
-    --muted: 34 44% 92%;
+    --muted: 250 20% 92%;
     --muted-foreground: 348 15% 45%;
 
     --accent: 348 30% 85%;
@@ -44,7 +44,7 @@
   }
 
   body {
-    @apply bg-[#FDF6E3] text-foreground antialiased;
+    @apply bg-[#FDF4F5] text-foreground antialiased;
     font-family: 'Lora', serif;
   }
 
@@ -58,7 +58,7 @@
 }
 
 .btn-secondary {
-  @apply bg-[#F5E8C7] text-[#D9A7B0] hover:bg-[#F0DFB9] transition-all duration-300 shadow-md hover:shadow-lg;
+  @apply bg-[#E8E6F0] text-[#D9A7B0] hover:bg-[#E0DEE8] transition-all duration-300 shadow-md hover:shadow-lg;
 }
 
 .card-hover {
