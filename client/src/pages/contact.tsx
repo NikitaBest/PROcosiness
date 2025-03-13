@@ -7,6 +7,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
+import { motion } from "framer-motion";
+import { Heart, Mail, MessageSquare, User } from "lucide-react";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -21,7 +23,7 @@ const Contact = () => {
     },
     onSuccess: () => {
       toast({
-        title: "Сообщение отправлено",
+        title: "Сообщение отправлено ✨",
         description: "Мы свяжемся с вами в ближайшее время",
       });
       form.reset();
@@ -33,66 +35,97 @@ const Contact = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-16">
-      <h1 className="font-['Playfair_Display'] text-4xl mb-8 text-center">
-        Связаться с нами
-      </h1>
-      
-      <div className="max-w-md mx-auto">
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-          <div>
-            <label className="block mb-2">Имя</label>
-            <Input {...form.register("name")} />
-            {form.formState.errors.name && (
-              <p className="text-red-500 text-sm mt-1">
-                {form.formState.errors.name.message}
-              </p>
-            )}
+    <div className="min-h-screen bg-gradient-to-b from-[#FDF4F5] via-white to-[#FDF4F5] py-16">
+      <div className="container mx-auto px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="max-w-2xl mx-auto"
+        >
+          <div className="text-center mb-12">
+            <h1 className="font-['Playfair_Display'] text-4xl text-[#C797A0] mb-4 flex items-center justify-center gap-2">
+              <Heart className="w-8 h-8" />
+              Связаться с нами
+            </h1>
+            <p className="font-['Lora'] text-lg text-[#D9A7B0]">
+              Мы всегда рады помочь вам создать уютную атмосферу в вашем доме
+            </p>
           </div>
           
-          <div>
-            <label className="block mb-2">Email</label>
-            <Input type="email" {...form.register("email")} />
-            {form.formState.errors.email && (
-              <p className="text-red-500 text-sm mt-1">
-                {form.formState.errors.email.message}
-              </p>
-            )}
+          <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-md border border-[#D9A7B0]/10">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+              <div>
+                <label className="flex items-center gap-2 mb-2 text-[#C797A0] font-['Playfair_Display']">
+                  <User className="w-4 h-4" />
+                  Имя
+                </label>
+                <Input 
+                  {...form.register("name")} 
+                  className="border-[#D9A7B0]/20 focus:border-[#D9A7B0] transition-colors rounded-xl"
+                />
+                {form.formState.errors.name && (
+                  <p className="text-red-400 text-sm mt-1">
+                    {form.formState.errors.name.message}
+                  </p>
+                )}
+              </div>
+              
+              <div>
+                <label className="flex items-center gap-2 mb-2 text-[#C797A0] font-['Playfair_Display']">
+                  <Mail className="w-4 h-4" />
+                  Email
+                </label>
+                <Input 
+                  type="email" 
+                  {...form.register("email")} 
+                  className="border-[#D9A7B0]/20 focus:border-[#D9A7B0] transition-colors rounded-xl"
+                />
+                {form.formState.errors.email && (
+                  <p className="text-red-400 text-sm mt-1">
+                    {form.formState.errors.email.message}
+                  </p>
+                )}
+              </div>
+              
+              <div>
+                <label className="flex items-center gap-2 mb-2 text-[#C797A0] font-['Playfair_Display']">
+                  <MessageSquare className="w-4 h-4" />
+                  Сообщение
+                </label>
+                <Textarea 
+                  {...form.register("message")} 
+                  className="border-[#D9A7B0]/20 focus:border-[#D9A7B0] transition-colors rounded-xl min-h-[120px]"
+                />
+                {form.formState.errors.message && (
+                  <p className="text-red-400 text-sm mt-1">
+                    {form.formState.errors.message.message}
+                  </p>
+                )}
+              </div>
+              
+              <Button
+                type="submit"
+                className="w-full bg-[#D9A7B0] hover:bg-[#C797A0] text-white font-['Lora'] text-lg rounded-full"
+                disabled={mutation.isPending}
+              >
+                {mutation.isPending ? "Отправка..." : "Отправить сообщение ✨"}
+              </Button>
+            </form>
           </div>
           
-          <div>
-            <label className="block mb-2">Сообщение</label>
-            <Textarea {...form.register("message")} />
-            {form.formState.errors.message && (
-              <p className="text-red-500 text-sm mt-1">
-                {form.formState.errors.message.message}
-              </p>
-            )}
-          </div>
-          
-          <Button
-            type="submit"
-            className="w-full"
-            disabled={mutation.isPending}
-          >
-            {mutation.isPending ? "Отправка..." : "Отправить"}
-          </Button>
-        </form>
-        
-        <div className="mt-12">
-          <h2 className="font-['Playfair_Display'] text-2xl mb-4">
-            Наши контакты
-          </h2>
-          <p className="mb-2">
-            Email:{" "}
+          <div className="mt-12 text-center">
+            <h2 className="font-['Playfair_Display'] text-2xl text-[#C797A0] mb-4">
+              Наши контакты
+            </h2>
             <a
               href="mailto:pro.uyut@example.com"
-              className="text-[#4A704A] hover:underline"
+              className="font-['Lora'] text-lg text-[#D9A7B0] hover:text-[#C797A0] transition-colors flex items-center justify-center gap-2"
             >
+              <Mail className="w-5 h-5" />
               pro.uyut@example.com
             </a>
-          </p>
-        </div>
+          </div>
+        </motion.div>
       </div>
     </div>
   );
