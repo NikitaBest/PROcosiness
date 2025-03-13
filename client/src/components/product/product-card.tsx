@@ -44,14 +44,14 @@ const ProductCard = ({ product }: ProductCardProps) => {
       </div>
 
       <div className="p-6">
-        <h3 className="font-['Playfair_Display'] text-xl mb-2 text-[#C797A0] group-hover:text-[#D9A7B0] transition-colors">
+        <h3 className="font-['Playfair_Display'] text-xl mb-2 text-[#2A2A2A] group-hover:text-[#C797A0] transition-colors">
           {product.name}
         </h3>
-        <p className="font-['Lora'] text-sm text-[#D9A7B0]/80 mb-4 line-clamp-2 leading-relaxed">
+        <p className="font-['Lora'] text-sm text-[#2A2A2A]/70 mb-4 line-clamp-2 leading-relaxed">
           {product.description}
         </p>
         <div className="flex items-center justify-between">
-          <span className="text-lg font-['Playfair_Display'] text-[#C797A0]">
+          <span className="text-lg font-['Playfair_Display'] text-[#2A2A2A]">
             {product.price} ₽
           </span>
           <Button 

@@ -44,10 +44,10 @@ const Contact = () => {
         >
           <div className="text-center mb-12">
             <h1 className="font-['Playfair_Display'] text-4xl text-[#C797A0] mb-4 flex items-center justify-center gap-2">
-              <Heart className="w-8 h-8" />
+              <Heart className="w-8 h-8 text-[#C797A0]" />
               Связаться с нами
             </h1>
-            <p className="font-['Lora'] text-lg text-[#D9A7B0]">
+            <p className="font-['Lora'] text-lg text-[#2A2A2A]/80 leading-relaxed">
               Мы всегда рады помочь вам создать уютную атмосферу в вашем доме
             </p>
           </div>
@@ -55,13 +55,13 @@ const Contact = () => {
           <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-md border border-[#D9A7B0]/10">
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
               <div>
-                <label className="flex items-center gap-2 mb-2 text-[#C797A0] font-['Playfair_Display']">
-                  <User className="w-4 h-4" />
+                <label className="flex items-center gap-2 mb-2 text-[#2A2A2A] font-['Playfair_Display']">
+                  <User className="w-4 h-4 text-[#C797A0]" />
                   Имя
                 </label>
                 <Input 
                   {...form.register("name")} 
-                  className="border-[#D9A7B0]/20 focus:border-[#D9A7B0] transition-colors rounded-xl"
+                  className="border-[#D9A7B0]/20 focus:border-[#D9A7B0] transition-colors rounded-xl text-[#2A2A2A]"
                 />
                 {form.formState.errors.name && (
                   <p className="text-red-400 text-sm mt-1">
@@ -71,14 +71,14 @@ const Contact = () => {
               </div>
               
               <div>
-                <label className="flex items-center gap-2 mb-2 text-[#C797A0] font-['Playfair_Display']">
-                  <Mail className="w-4 h-4" />
+                <label className="flex items-center gap-2 mb-2 text-[#2A2A2A] font-['Playfair_Display']">
+                  <Mail className="w-4 h-4 text-[#C797A0]" />
                   Email
                 </label>
                 <Input 
                   type="email" 
                   {...form.register("email")} 
-                  className="border-[#D9A7B0]/20 focus:border-[#D9A7B0] transition-colors rounded-xl"
+                  className="border-[#D9A7B0]/20 focus:border-[#D9A7B0] transition-colors rounded-xl text-[#2A2A2A]"
                 />
                 {form.formState.errors.email && (
                   <p className="text-red-400 text-sm mt-1">
@@ -88,13 +88,13 @@ const Contact = () => {
               </div>
               
               <div>
-                <label className="flex items-center gap-2 mb-2 text-[#C797A0] font-['Playfair_Display']">
-                  <MessageSquare className="w-4 h-4" />
+                <label className="flex items-center gap-2 mb-2 text-[#2A2A2A] font-['Playfair_Display']">
+                  <MessageSquare className="w-4 h-4 text-[#C797A0]" />
                   Сообщение
                 </label>
                 <Textarea 
                   {...form.register("message")} 
-                  className="border-[#D9A7B0]/20 focus:border-[#D9A7B0] transition-colors rounded-xl min-h-[120px]"
+                  className="border-[#D9A7B0]/20 focus:border-[#D9A7B0] transition-colors rounded-xl min-h-[120px] text-[#2A2A2A]"
                 />
                 {form.formState.errors.message && (
                   <p className="text-red-400 text-sm mt-1">
@@ -119,9 +119,9 @@ const Contact = () => {
             </h2>
             <a
               href="mailto:pro.uyut@example.com"
-              className="font-['Lora'] text-lg text-[#D9A7B0] hover:text-[#C797A0] transition-colors flex items-center justify-center gap-2"
+              className="font-['Lora'] text-lg text-[#2A2A2A] hover:text-[#C797A0] transition-colors flex items-center justify-center gap-2"
             >
-              <Mail className="w-5 h-5" />
+              <Mail className="w-5 h-5 text-[#C797A0]" />
               pro.uyut@example.com
             </a>
           </div>

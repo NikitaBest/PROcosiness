@@ -76,10 +76,10 @@ export const BannerCarousel = () => {
                     transition={{ duration: 0.5, delay: 0.2 }}
                     className="max-w-xl relative z-10"
                   >
-                    <h2 className="font-['Playfair_Display'] text-3xl md:text-5xl mb-4 text-[#C797A0] drop-shadow-sm">
+                    <h2 className="font-['Playfair_Display'] text-3xl md:text-5xl mb-4 text-[#2A2A2A] drop-shadow-sm">
                       {banner.title}
                     </h2>
-                    <p className="font-['Lora'] text-lg md:text-xl mb-6 text-[#D9A7B0]">
+                    <p className="font-['Lora'] text-lg md:text-xl mb-6 text-[#3A3A3A]">
                       {banner.description}
                     </p>
                     <Link href="/catalog">
@@ -103,7 +103,7 @@ export const BannerCarousel = () => {
       <Button
         variant="ghost"
         size="icon"
-        className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-[#D9A7B0] rounded-full shadow-md hover:shadow-lg border border-[#D9A7B0]/20"
+        className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-[#2A2A2A] rounded-full shadow-md hover:shadow-lg border border-[#D9A7B0]/20"
         onClick={scrollPrev}
       >
         <ChevronLeft className="h-5 w-5" />
@@ -111,7 +111,7 @@ export const BannerCarousel = () => {
       <Button
         variant="ghost"
         size="icon"
-        className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-[#D9A7B0] rounded-full shadow-md hover:shadow-lg border border-[#D9A7B0]/20"
+        className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-[#2A2A2A] rounded-full shadow-md hover:shadow-lg border border-[#D9A7B0]/20"
         onClick={scrollNext}
       >
         <ChevronRight className="h-5 w-5" />
@@ -124,8 +124,8 @@ export const BannerCarousel = () => {
             key={index}
             className={`w-2 h-2 rounded-full transition-all duration-300 ${
               selectedIndex === index 
-                ? "bg-[#D9A7B0] w-6" 
-                : "bg-[#D9A7B0]/40 hover:bg-[#D9A7B0]/60"
+                ? "bg-[#2A2A2A] w-6" 
+                : "bg-[#2A2A2A]/40 hover:bg-[#2A2A2A]/60"
             }`}
             onClick={() => emblaApi?.scrollTo(index)}
           />

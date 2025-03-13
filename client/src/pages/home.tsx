@@ -29,7 +29,7 @@ const Home = () => {
             Наши категории
             <Sparkles className="w-6 h-6" />
           </h2>
-          <p className="font-['Lora'] text-lg text-[#D9A7B0] max-w-2xl mx-auto">
+          <p className="font-['Lora'] text-lg text-[#2A2A2A]/80 max-w-2xl mx-auto leading-relaxed">
             Откройте для себя коллекцию изысканных гипсовых изделий, созданных с любовью к деталям
           </p>
         </motion.div>
@@ -50,7 +50,7 @@ const Home = () => {
               Популярные изделия
               <Sparkles className="w-6 h-6" />
             </h2>
-            <p className="font-['Lora'] text-lg text-[#D9A7B0] max-w-2xl mx-auto">
+            <p className="font-['Lora'] text-lg text-[#2A2A2A]/80 max-w-2xl mx-auto leading-relaxed">
               Выберите особенные предметы декора, которые создадут неповторимую атмосферу в вашем доме
             </p>
           </motion.div>

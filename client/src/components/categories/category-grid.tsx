@@ -56,10 +56,10 @@ export const CategoryGrid = () => {
                 <div className="bg-white/90 rounded-full p-4 w-16 h-16 mx-auto mb-6 transform transition-transform group-hover:rotate-12 group-hover:scale-110">
                   <category.icon className="w-full h-full text-[#D9A7B0]" />
                 </div>
-                <h3 className="font-['Playfair_Display'] text-2xl mb-3 text-[#C797A0]">
+                <h3 className="font-['Playfair_Display'] text-2xl mb-3 text-[#2A2A2A]">
                   {category.name}
                 </h3>
-                <p className="font-['Lora'] text-[#D9A7B0] leading-relaxed">
+                <p className="font-['Lora'] text-[#2A2A2A]/80 leading-relaxed">
                   {category.description}
                 </p>
               </div>
